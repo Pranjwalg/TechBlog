@@ -50,43 +50,46 @@ PostDao d1=new PostDao(ConnectionProvider.getConnection());
         <script src="like.js"></script>
     
     <style>
-  .primary-background{
-    
-    
+    body{
+                 
     background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-image: linear-gradient(43deg, #4158D0 0%, #d71678 46%, #276a9b 100%);
+            }
+            .primary-background{
+    
+    background-color:#171a16;
+   background: linear-gradient(43deg, #0e0e0e 0%, #141414 46%, #3512f5 100%);
 }
-body{
-     
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-}
-.card{
+.s{
  background:#12192c;
  color: white;
  
 }
-        body{
-           background:url(images/images.jpeg);
-           background-size: cover;
-           background-attachment: fixed;
-            
-        }
+.i{
+    background:#12192c;
+ color: white;
+}
         .p_title{
             font-weight: 100;
             font-family: serif;
             font-size: 40px;
-            
+            background:#12192c;
+ color: white;
         }
         .p_content{
             font-weight: 100;
             font-family: serif;
             font-size: 20px;
+            background:#12192c;
+ color: white;
         }
         .p_code{
            font-weight: 100;
             font-family: serif;
             font-size: 20px; 
+            color: white;
+            background:#12192c;
+ 
         }
         .name{
             font-size: 20px;
@@ -97,10 +100,14 @@ body{
            font-weight: bold;
            
         }
-        .n{
-            border: 1px solid black;
-            
+        .h{
+            background-color: white;
+             color: #3c2828;
         }
+        .e{
+             background-color: white;
+        }
+        
     </style>  
     </style>
     </head>
@@ -119,21 +126,29 @@ body{
                         <a class="nav-link" href="profile.jsp"><span class="fa fa-bell-o"></span>Learn with Pranjwal <span class="sr-only">(current)</span></a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="fa fa-check-circle-o"></span> Categories
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Programming Language</a>
-                            <a class="dropdown-item" href="#">Project Implementation</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Data Structure</a>
-                        </div>
-                    </li>
+                     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fa fa-check-circle-o"></span> Categories
+        </a>
+          <div class="dropdown-menu s p-0 m-0" 
+ aria-labelledby="navbarDropdown  ">
+         <%
+ PostDao d2=new PostDao(ConnectionProvider.getConnection());
+ ArrayList<Category>List=d2.getonly2();
+ for(Category s:List){
+ %>  
+ 
+ <a href="Login.jsp" onclick="getPost(<%=s.getCid()%>,this)" getPost" class="c-link list-group-item list-group-item-action " style="background:#12192c;
+ color: white;"><%=s.getName()%></a>
+  <%
+      }
+      %>
+        </div>
+      </li>
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="fa fa-user"></span>Contact</a>
+                        <a class="nav-link" href="contact.jsp"><span class="fa fa-user"></span>Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"  data-toggle="modal" data-target="#post"><span class="fa fa-external-link"></span>Do Post</a>
@@ -168,15 +183,13 @@ body{
          <div class="row my-4">
              <div class="col-md-8 offset-md-2">
                  
-                 <div class="card-header primary-background text-white">
+                 <div class="card-header  text-white s">
                      <h4 class="p_title"><%=p.getPtitle()%></h4>
                      
                      
                  </div>
-                     <div class="card-body">
-                          <img class="card-img-top" src="Blog_pics/<%=p.getPpic()%>" alt="Card image cap">
-                             
-                          <div class="row my-4 n">
+                     <div class="card-body s">
+                                  <div class="row my-4 n">
                               <div class="col-md-8">
                                   <p  class="name"><a href="#"><%=u1.getName()%> </a>has Posted: </p>
                               </div> 
@@ -188,16 +201,19 @@ body{
                           </div>  
                           
                           
-                       
-                          <p class="p_content"><%=p.getPcontent()%></p>
-                         
+                                  <div>
+                          <p class="p_content s"><%=p.getPcontent()%></p>
+                                  </div>
                          <br>
                          <br>
-                         <div class="p_code">
-                         <pre><%=p.getPcode()%></pre>
+                         <div class="p_code  s">
+                             <pre class="s"><%=p.getPcode()%></pre>
+                         </div>
+                         <div style="">
+                             <img class="card-img-top" src="Blog_pics/<%=p.getPpic()%>" alt="Card image cap">
                          </div>
                      </div>
-                     <div class="card-footer primary-background text-white">
+                     <div class="card-footer s text-white">
                          <a href="#" onclick="doLike(<%=p.getPid()%>,<%=u.getId()%>)" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span class="like_counter<%=p.getPid()%>"><%=ld.countLike(p.getPid())%></span></a>
       
 
@@ -238,13 +254,13 @@ body{
         <div class="modal fade" id="profilemodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header primary-background text-white">
+                    <div class="modal-header h ">
                         <h5 class="modal-title" id="exampleModalLongTitle">TechBlog</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body i">
                         <div class="container text-center">
                             <img src="profilepics/<%=u.getProfile()%>" class="img-fluid" style="border-radius:50% ;max-width:120px; "/>
 
@@ -321,7 +337,7 @@ body{
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer e">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button id="edit" type="button" class="btn btn-primary">Edit</button>
                     </div>
@@ -344,13 +360,13 @@ body{
         <div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header h">
                         <h5 class="modal-title" id="exampleModalLabel">Provide the post details.</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body i">
 
 
 

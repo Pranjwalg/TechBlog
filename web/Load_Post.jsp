@@ -47,7 +47,7 @@
 .btn-11 {
   border: none;
   background: rgb(251,33,117);
-    background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+    background: linear-gradient(0deg, rgb(114 65 101) 0%, rgb(249 10 102) 100%);
     color: #fff;
     overflow: hidden;
 }
@@ -65,6 +65,10 @@
     height: 20%;
     background-color: #fff;
     animation: shiny-btn1 3s ease-in-out infinite;
+}
+.p{
+     background-color:#171a16;
+   background: linear-gradient(43deg, #0e0e0e 0%, #141414 46%, #3512f5 100%);
 }
 .btn-11:hover{
   opacity: .7;
@@ -86,6 +90,7 @@
 .btn-9 {
   border: none;
   transition: all 0.3s ease;
+ background: blue;
   overflow: hidden;
 }
 .btn-9:after {
@@ -109,6 +114,40 @@ background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
   color: #fff;
 }
 .btn-9:hover:after {
+  -webkit-transform: scale(2) rotate(180deg);
+  transform: scale(2) rotate(180deg);
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+.b{
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+ 
+}
+.b:after {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 10%;
+   background-color: #1fd1f9;
+background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  transition: all 0.3s ease;
+}
+.b:hover {
+  background: transparent;
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  color: #fff;
+}
+.b:hover:after {
   -webkit-transform: scale(2) rotate(180deg);
   transform: scale(2) rotate(180deg);
   box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
@@ -145,7 +184,7 @@ for(Post p:l){
 
 <div  class="col-md-6 mt-2">
     <div class="card">
-        <img class="card-img-top" src="Blog_pics/<%=p.getPpic()%>" alt="Card image cap">
+       
     <div class="card-body">
         
     <b><%=p.getPtitle()%></b>
@@ -165,12 +204,13 @@ for(Post p:l){
     
   %>
     </div>
-    <div class="card-footer text-center primary-background" >
-        <a href="#" onclick="doLike(<%=p.getPid()%>,<%=u.getId()%>)" class="custom-btn btn-9 btn-sm" ><i class="fa fa-thumbs-o-up"></i>
+     <img class="card-img-top" src="Blog_pics/<%=p.getPpic()%>" alt="Card image cap">
+    <div class="card-footer text-center p" >
+        <a href="#" style="text-decoration: none" onclick="doLike(<%=p.getPid()%>,<%=u.getId()%>)" class="custom-btn b btn-6<%=p.getPid()%> btn-sm" ><i class="fa fa-thumbs-o-up"></i>
            <span class="like_counter<%=p.getPid()%>"><%=ld.countLike(p.getPid())%></span></a>
         <a href="show_blog_page.jsp?post_id=<%=p.getPid()%>" class="custom1-btn btn-11">Read More</a>
 
-         <a href="#" class="custom-btn btn-9 " ><i class="fa fa-commenting-o"></i><span>20</span></a>
+         <a href="#" style="text-decoration: none"class="custom-btn btn-9 " ><i class="fa fa-commenting-o"></i><span>20</span></a>
     </div>
     </div>
 </div>

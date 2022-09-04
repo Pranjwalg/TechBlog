@@ -17,6 +17,7 @@ $.ajax({
             let c=$(`.like_counter${postid}`).html();
              c++;
             $(`.like_counter${postid}`).html(c);
+            $(`.btn-6${postid}`).css({"backgroundColor":"blue"});
             
         }
     },

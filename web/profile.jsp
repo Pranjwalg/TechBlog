@@ -42,9 +42,8 @@
             }
             .primary-background{
     
-    
-    background-color: #cb1637;
-   background-image: linear-gradient(43deg, #4158D0 0%, #89092d 46%, #FFCC70 100%);
+    background-color:#171a16;
+   background: linear-gradient(43deg, #0e0e0e 0%, #141414 46%, #3512f5 100%);
 }
 .card{
  background:#12192c;
@@ -55,6 +54,15 @@
     background:#12192c;
  color: white;
 }
+.s{
+    background: #b72e2e0a; 
+    color: #3c2828;
+}
+   
+.f{
+ background: #b72e2e0a;
+}
+
         </style>
     </head>
     <body>
@@ -128,7 +136,7 @@
                     <div class="col-md-4">
                       <!--categories -->
      <div class="list-group">
-  <a href="#" onclick="getPost(0,this)" class="c-link list-group-item list-group-item-action active">
+  <a href="#" style="background-color:#202638;color: white;font-size:15px;" onclick="getPost(0,this)" class="c-link list-group-item list-group-item-action active">
   All Posts
   </a>
          
@@ -181,7 +189,7 @@
         <div class="modal fade" id="profilemodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header primary-background text-white">
+                    <div class="modal-header s ">
                         <h5 class="modal-title" id="exampleModalLongTitle">TechBlog</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -264,7 +272,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer primary-background">
+                    <div class="modal-footer f">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button id="edit" type="button" class="btn btn-primary">Edit</button>
                     </div>
@@ -287,13 +295,13 @@
         <div class="modal fade" id="post" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header primary-background">
+                    <div class="modal-header s">
                         <h5 class="modal-title  " id="exampleModalLabel">Provide the post details.</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body ">
 
 
 
