@@ -278,7 +278,7 @@ for(Post p:l){
                             <ul class="list-inline">
                                 
                                 <li class="list-inline-item"><a href="https://www.linkedin.com/in/pranjwal-8bb250204/"><i class="fab google footer-social-icon fa-linkedin"></i></i></a></li>
-                                <li class="list-inline-item"><a href="https://github.com/pranjwal-gupta"><i class="fab apple footer-social-icon fa-github"></i></i></a></li>
+                                <li class="list-inline-item"><a href="https://github.com/Pranjwalg"><i class="fab apple footer-social-icon fa-github"></i></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -42,7 +42,7 @@ If you want to know more about me..
                     </li>
                    
                     <li>
-                        <a href="https://github.com/pranjwal-gupta">  <i class = "fa fa-github"></i></a>
+                        <a href="https://github.com/Pranjwalg">  <i class = "fa fa-github"></i></a>
                     </li>
                     
                 </ul>
