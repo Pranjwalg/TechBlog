@@ -55,7 +55,7 @@ h1 {
     font-family: auto;
     position: relative;
     display: inline-block;
-    color: text-transform: uppercase;
+    color: text-transform uppercase;
     animation: waviy 1s infinite;
     animation-delay: calc(.1s * var(--i));
 }

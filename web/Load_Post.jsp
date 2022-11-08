@@ -208,9 +208,9 @@ for(Post p:l){
     <div class="card-footer text-center p" >
         <a href="#" style="text-decoration: none" onclick="doLike(<%=p.getPid()%>,<%=u.getId()%>)" class="custom-btn b btn-6<%=p.getPid()%> btn-sm" ><i class="fa fa-thumbs-o-up"></i>
            <span class="like_counter<%=p.getPid()%>"><%=ld.countLike(p.getPid())%></span></a>
-        <a href="show_blog_page.jsp?post_id=<%=p.getPid()%>" class="custom1-btn btn-11">Read More</a>
+        <a href="show_blog_page.jsp?post_id=<%=p.getPid()%>" class="custom1-btn btn-11">ReadMore</a>
 
-         <a href="#" style="text-decoration: none"class="custom-btn btn-9 " ><i class="fa fa-commenting-o"></i><span>20</span></a>
+        
     </div>
     </div>
 </div>

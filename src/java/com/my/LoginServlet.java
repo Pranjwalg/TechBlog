@@ -4,7 +4,7 @@
  */
 package com.my;
 
-import com.mysql.cj.Session;
+
 import com.techblog.dao.UserDao;
 import com.techblog.entities.Message;
 import com.techblog.entities.User;

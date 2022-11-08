@@ -1,11 +1,11 @@
 
 package com.techblog.dao;
 
-import com.mysql.cj.protocol.Resultset;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class LikeDao {
     
@@ -54,7 +54,7 @@ public class LikeDao {
           
        PreparedStatement ps=  con.prepareStatement(q);
      ps.setInt(1,postid);
-         ResultSet r=ps.executeQuery();
+       ResultSet r=ps.executeQuery();
          if(r.next()){
              
              count=r.getInt("count(*)");

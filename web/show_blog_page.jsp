@@ -210,14 +210,14 @@ PostDao d1=new PostDao(ConnectionProvider.getConnection());
                              <pre class="s"><%=p.getPcode()%></pre>
                          </div>
                          <div style="">
-                             <img class="card-img-top" src="Blog_pics/<%=p.getPpic()%>" alt="Card image cap">
+              <img class="card-img-top" src="Blog_pics/<%=p.getPpic()%>" alt="Card image cap">
                          </div>
                      </div>
                      <div class="card-footer s text-white">
                          <a href="#" onclick="doLike(<%=p.getPid()%>,<%=u.getId()%>)" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span class="like_counter<%=p.getPid()%>"><%=ld.countLike(p.getPid())%></span></a>
       
 
-         <a href="#" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>20</span></a>
+       
                      </div>
                  
              </div>
